@@ -32,6 +32,9 @@ public class Game_Screen extends JPanel
 	private static int selectionOvalHeight = 3;
 	public static int Ship_Pos_X = 400,Ship_Pos_Y = 700;
 	
+	// These are the bool fields that correspond to in game key presses
+	public boolean upPress, downPress, leftPress, rightPress, spacePress;
+	
 	public Game_Screen()
 	{
 		System.out.println("Game Screen created");
@@ -133,6 +136,13 @@ public class Game_Screen extends JPanel
 	    	  }
 	    }
 	
+	public void keyAction(){
+		// This method is called from Game_Screen_KeyAdapter.java every time keyEvent() is called
+		if (upPress) moveShipUp();
+		if (downPress) moveShipDown();
+		if (leftPress) moveShipLeft();
+		if (rightPress) moveShipRight();
+	}
 	
 	public void moveShipUp()
 	{
