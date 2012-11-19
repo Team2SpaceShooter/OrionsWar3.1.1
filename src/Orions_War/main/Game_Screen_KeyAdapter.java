@@ -11,11 +11,6 @@ public class Game_Screen_KeyAdapter extends KeyAdapter
 		this.Game_Screen = Game_Screen;
 	}
 	
-	public void keyTyped(KeyEvent e){
-		// This overrides the keyTyped method which enables keyPressed() to handle 
-		// all of the movement
-	}
-	
 	public void keyPressed(KeyEvent e)
 	{
 		int keycode = e.getKeyCode();
@@ -26,63 +21,31 @@ public class Game_Screen_KeyAdapter extends KeyAdapter
 		{
 		case KeyEvent.VK_UP:
 			System.out.println("up");
-			Game_Screen.upPress = true;
+			Game_Screen.moveShipUp();
 			break;
 		case KeyEvent.VK_DOWN:
 			System.out.println("down");
-			Game_Screen.downPress = true;
+			Game_Screen.moveShipDown();
 			break;
 		case KeyEvent.VK_LEFT:
 			System.out.println("left");
-			Game_Screen.leftPress = true;
+			Game_Screen.moveShipLeft();
 			break;
 		case KeyEvent.VK_RIGHT:
 			System.out.println("right");
-			Game_Screen.rightPress = true;
+			Game_Screen.moveShipRight();
 			break;
 		case KeyEvent.VK_SPACE:
-			System.out.println("space");
-			Game_Screen.spacePress = true;
-			break;
+		    System.out.println("space");
+		    Game_Screen.fire_shot();
+		    break;
 
-		}// end switch
-		
-		Game_Screen.keyAction();
+		}
 		
 		
 	}
-	
-	public void keyReleased(KeyEvent e)
+	public void keyTyped(KeyEvent key)
 	{
-		int keycode = e.getKeyCode();
-		
-		System.out.println("key released: ");
-		
-		switch(keycode)
-		{
-		case KeyEvent.VK_UP:
-			System.out.println("up");
-			Game_Screen.upPress = false;
-			break;
-		case KeyEvent.VK_DOWN:
-			System.out.println("down");
-			Game_Screen.downPress = false;
-			break;
-		case KeyEvent.VK_LEFT:
-			System.out.println("left");
-			Game_Screen.leftPress = false;
-			break;
-		case KeyEvent.VK_RIGHT:
-			System.out.println("right");
-			Game_Screen.rightPress = false;
-			break;
-		case KeyEvent.VK_SPACE:
-			System.out.println("space");
-			Game_Screen.spacePress = false;
-			break;
-			
-
-		}
 	}
 	
 	

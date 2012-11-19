@@ -54,7 +54,7 @@ public class Main
     	mainFrame = new JFrame();
     	mainFrame.setSize(new Dimension(1012,825));
     	mainFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("images/spacebackgrouBIG.png"));
-    	
+    	mainFrame.setResizable(false);
     	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setTitle("Orion's War");
     	mainMenu = new MainMenu();

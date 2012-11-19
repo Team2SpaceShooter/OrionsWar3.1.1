@@ -13,17 +13,13 @@ import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
+import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class Game_Screen extends JPanel 
 {
 	private static Color backgroundColor = Color.black;
 	private static Color textColor = Color.white;
-	
-	
-
-	
 	private static Dimension windowSize = new Dimension(1000,804);
 	private static Image img1;
 	
@@ -31,9 +27,7 @@ public class Game_Screen extends JPanel
 	private static int selectionOvalWidth = 3;
 	private static int selectionOvalHeight = 3;
 	public static int Ship_Pos_X = 400,Ship_Pos_Y = 700;
-	
-	// These are the bool fields that correspond to in game key presses
-	public boolean upPress, downPress, leftPress, rightPress, spacePress;
+	public static ArrayList<Shot> shots = new ArrayList <Shot>();
 	
 	public Game_Screen()
 	{
@@ -65,9 +59,11 @@ public class Game_Screen extends JPanel
 		// the following two lines are needed because calling the paint overrides the background color
 
 		g.drawImage(img1, 0, 0, 1000,800, this);
-		drawcurrentship(g);
 
-
+		
+		 drawcurrentship(g);
+         deal_with_shots_fired(g);
+		
 
     }
 	 public void drawcurrentship(Graphics g)
@@ -136,13 +132,6 @@ public class Game_Screen extends JPanel
 	    	  }
 	    }
 	
-	public void keyAction(){
-		// This method is called from Game_Screen_KeyAdapter.java every time keyEvent() is called
-		if (upPress) moveShipUp();
-		if (downPress) moveShipDown();
-		if (leftPress) moveShipLeft();
-		if (rightPress) moveShipRight();
-	}
 	
 	public void moveShipUp()
 	{
@@ -187,5 +176,25 @@ public class Game_Screen extends JPanel
 		}
 		else Ship_Pos_X += 10;
 		repaint();
+	}
+	
+	public void fire_shot()
+	{
+		shots.add(new Shot((double)Ship_Pos_X + 23,(double)Ship_Pos_Y - 10,Main.Player1.Ship.xVelocity,Main.Player1.Ship.yVelocity));
+	    repaint();
+	}
+	
+	public void deal_with_shots_fired(Graphics g)
+	{
+		for(Shot s : shots) 
+		{  s.move();
+			if(Main.Player1.Ship.Ship_Weapon.getCurrentWeapon() == -1)
+			{
+				g.drawOval((int)s.getXPosition(),(int)s.getYPosition(), (int)s.getRadius(), (int)s.getRadius());
+			}
+			else
+			g.drawImage(s.weapon,(int)s.getXPosition(),(int)s.getYPosition(),7,21,this);
+			
+		}
 	}
 }

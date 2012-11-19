@@ -32,19 +32,7 @@ public class Space_Objects
 	
 	public void move()
 	{
-		//moves an object, if off screen wraps around.
-		xPosition = xPosition + xVelocity;
-		yPosition = yPosition + yVelocity;
-		
-		if(xPosition > 800)
-			xPosition -= 800;
-		if(yPosition > 600)
-			yPosition -= 600;
-		if(xPosition < 0)
-			xPosition += 800;
-		if(yPosition < 0)
-			yPosition += 600;
-	
+		yPosition = yPosition - yVelocity;
 	}
 
 }
