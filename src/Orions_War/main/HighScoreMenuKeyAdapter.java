@@ -33,6 +33,7 @@ public class HighScoreMenuKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(highScoreMenu.getSelection());
+			Sounds.select.play();
 			HighScoreMenuEventHandler.handleEvent(highScoreMenu.getSelection());
 			break;
 		}

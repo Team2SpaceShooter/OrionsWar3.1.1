@@ -34,6 +34,7 @@ public class NewGameMenuKeyAdapter extends KeyAdapter
 			break;
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
+			Sounds.select.play();
 			System.out.println(newGameMenu.getSelection());
 			try {
 				NewGameMenuEventHandler.handleEvent(newGameMenu.getSelection());

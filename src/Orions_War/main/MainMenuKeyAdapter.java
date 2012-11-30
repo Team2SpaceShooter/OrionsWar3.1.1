@@ -32,6 +32,7 @@ public class MainMenuKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(menu.getSelection());
+			Sounds.select.play();
 			MenuEventHandler.handleEvent(menu.getSelection());
 			break;
 		}

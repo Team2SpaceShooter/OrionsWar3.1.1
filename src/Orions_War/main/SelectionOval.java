@@ -84,6 +84,7 @@ public class SelectionOval
 	
 	public void moveUp()
 	{
+		Sounds.move.play();
 		if(customIncrements)
 		{
 			if(currentPos > 0)
@@ -106,6 +107,7 @@ public class SelectionOval
 	
 	public void moveDown()
 	{
+		Sounds.move.play();
 		if(customIncrements)
 		{
 			if(currentPos < selectArray.length - 1)
@@ -130,11 +132,13 @@ public class SelectionOval
 	
 	public void moveToY(int newY)
 	{
+		Sounds.move.play();
 		selectionOvalY = newY;
 	}
 	
 	public void moveToX(int newX)
 	{
+		Sounds.move.play();
 		selectionOvalX = newX;
 	}
 	

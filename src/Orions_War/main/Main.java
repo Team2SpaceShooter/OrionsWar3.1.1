@@ -47,6 +47,7 @@ public class Main
     public static Ship_Shop_Weapon_Confirmation Ship_Shop_Weapon_Confirmation;
     public static Game_Screen Game_Screen;
     public static Save_Confirmation_PopUp Save_Confirmation_PopUp;
+    public static Sounds Sounds;
     private static void createAndShowGUI() 
     {
     	System.out.println("creating GUI");
@@ -74,6 +75,7 @@ public class Main
     	Ship_Shop_Weapon_Confirmation = new Ship_Shop_Weapon_Confirmation();
     	Game_Screen = new Game_Screen();
     	Save_Confirmation_PopUp = new Save_Confirmation_PopUp();
+    	Sounds = new Sounds();
     	Player1 = new Player();
     	//TODO: this should only get called when the highscore menu is called specifically remembering to close file and whatnot
     	//((HighScoreMenu) highScoreMenu).loadScores();

@@ -23,15 +23,18 @@ public class Ship_Shop_Weapon_Confirmation_KeyAdapter extends KeyAdapter
 		
 		case KeyEvent.VK_LEFT:
 			System.out.println("left");
+			Sounds.move.play();
 			Ship_Shop_Weapon_Confirmation.moveSelectionOvalLeft();
 			break;
 		case KeyEvent.VK_RIGHT:
 			System.out.println("right");
+			Sounds.move.play();
 			Ship_Shop_Weapon_Confirmation.moveSelectionOvalRight();
 			break;
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(Ship_Shop_Weapon_Confirmation.getSelection());
+			Sounds.buy.play();
 			Ship_Shop_Weapon_Confirmation_MenuEventHandler.handleEvent(Ship_Shop_Weapon_Confirmation.getSelection());
 			break;
 		}

@@ -58,7 +58,6 @@ public class Game_Screen extends JPanel implements KeyListener
 	public static int level_score = 0;
 	// These are the bool fields that correspond to in game key presses
 	private boolean upPress, downPress, leftPress, rightPress, spacePress, escPressed;
-	public Sound shotSound = new Sound("sounds/Blaster-Imperial.wav");
 	public static Player_Ship cur_ship = Main.Player1.Ship;
 	
 	public Game_Screen()
@@ -133,7 +132,7 @@ public class Game_Screen extends JPanel implements KeyListener
 		      Toolkit.getDefaultToolkit().sync();
 			//this.requestFocusInWindow();
 
-		     
+		     Sounds.Background.startLoop();
 		
 		Runnable r1 = new Runnable()
 		{ 		
@@ -804,7 +803,7 @@ public class Game_Screen extends JPanel implements KeyListener
 	public void fire_shot()
 	{
 		shots.add(new Shot((double)Ship_Pos_X+26,(double)Ship_Pos_Y - 10, 0 ,-10));
-		shotSound.play();
+		Sounds.shotSound.play();
 	}
 	
 	public void deal_with_shots_fired(Graphics g)
@@ -887,6 +886,12 @@ public class Game_Screen extends JPanel implements KeyListener
 				{
 					NPCsAlive[j] = false;
 				    level_score += (enemies.enemies.get(j).type + 1) * 250;
+				    int k = generator.nextInt() % 10;
+					 if(k > 5)
+						 Sounds.Explosion1.play();
+					 else if (k > 0)
+						 Sounds.Explosion2.play();
+					 else Sounds.Wilhelm.play();
 				}
 				
 			}
@@ -997,6 +1002,10 @@ public class Game_Screen extends JPanel implements KeyListener
 					{
 						Enemy_Asteroids_Alive[d] = false;
 					    level_score += (Enemy_Asteroids.get(d).type + 1) * 100;
+					    int k = generator.nextInt() % 10;
+						 if(k > 5)
+							 Sounds.Explosion1.play();
+						 else Sounds.Explosion2.play();
 					}
 					
 					// New Comets spawn for the next frame

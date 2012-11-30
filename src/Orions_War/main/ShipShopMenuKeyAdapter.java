@@ -23,15 +23,18 @@ public class ShipShopMenuKeyAdapter extends KeyAdapter
 		{
 		case KeyEvent.VK_UP:
 			System.out.println("up");
+			Sounds.move.play();
 			ShipShopMenu.moveSelectionOvalUp();
 			break;
 		case KeyEvent.VK_DOWN:
 			System.out.println("down");
+			Sounds.move.play();
 			ShipShopMenu.moveSelectionOvalDown();
 			break;
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(ShipShopMenu.getSelection());
+			Sounds.select.play();
 			try {
 				ShipShopMenuEventHandler.handleEvent(ShipShopMenu.getSelection());
 			} catch (FileNotFoundException e1) {

@@ -30,6 +30,7 @@ public class HowToPlayScreenKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(howToPlayScreen.getSelection());
+			Sounds.select.play();
 			HowToPlayScreenEventHandler.handleEvent(howToPlayScreen.getSelection());
 			break;
 		}

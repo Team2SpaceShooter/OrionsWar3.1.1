@@ -37,8 +37,17 @@ public class Sound{
 		if(clip.isRunning())
 			clip.stop();//if the clip is playing, stop it before you start again
 		clip.setMicrosecondPosition(0);//Make sure the sound starts at the beginning
-		clip.start();//play the clip
-		
-		
+		clip.start();//play the clip	
+	}
+	
+	public void startLoop()
+	{
+		clip.loop(1000);
+	}
+	
+	public void endLoop()
+	{
+		clip.stop();
+		clip.setMicrosecondPosition(0);
 	}
 }

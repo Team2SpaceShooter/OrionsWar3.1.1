@@ -23,23 +23,28 @@ public class ShipShopThrustersKeyAdapter extends KeyAdapter
 		{
 		case KeyEvent.VK_UP:
 			System.out.println("up");
+			Sounds.move.play();
 			ShipShopThrustersMenu.moveSelectionOvalUp();
 			break;
 		case KeyEvent.VK_DOWN:
 			System.out.println("down");
+			Sounds.move.play();
 			ShipShopThrustersMenu.moveSelectionOvalDown();
 			break;
 		case KeyEvent.VK_LEFT:
 			System.out.println("left");
+			Sounds.move.play();
 			ShipShopThrustersMenu.moveSelectionOvalLeft();
 			break;
 		case KeyEvent.VK_RIGHT:
 			System.out.println("right");
+			Sounds.move.play();
 			ShipShopThrustersMenu.moveSelectionOvalRight();
 			break;
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(ShipShopThrustersMenu.getSelection());
+			Sounds.select.play();
 			try {
 				ShipShopThrustersMenuEventHandler.handleEvent(ShipShopThrustersMenu.getSelection());
 			} catch (FileNotFoundException e1) {

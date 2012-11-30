@@ -34,6 +34,7 @@ public class LoadGameMenuKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(loadGameMenu.getSelection());
+			Sounds.select.play();
 			try {
 				LoadGameMenuEventHandler.handleEvent(loadGameMenu.getSelection());
 			} catch (FileNotFoundException e1) {

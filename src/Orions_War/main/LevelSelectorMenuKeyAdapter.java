@@ -32,6 +32,7 @@ public class LevelSelectorMenuKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(levelSelectorMenu.getSelection());
+			Sounds.select.play();
 			LevelSelectorMenuEventHandler.handleEvent(levelSelectorMenu.getSelection());
 			break;
 		}
