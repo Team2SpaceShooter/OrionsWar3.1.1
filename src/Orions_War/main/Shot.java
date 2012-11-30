@@ -1,12 +1,13 @@
 package Orions_War.main;
 
+
 import java.awt.Font;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Shot extends Space_Objects
 {
-	final static double ShotRadius = 3;
+	public static double ShotRadius = 10;
 	private int age;
 	public static BufferedImage spriteSheet = null,weapon;
 	public static BufferedImageLoader loader = new BufferedImageLoader();
@@ -16,7 +17,6 @@ public class Shot extends Space_Objects
 		super(xPos, yPos, xVel, yVel, ShotRadius);
 		age = 0;
 		set_the_shots_image();
-
 	}
 	
 	public void move()
@@ -53,4 +53,18 @@ public class Shot extends Space_Objects
 		}
 		
 	}
+	
+
+	boolean overlapping(Enemy_Space_Objects rhs)
+	{
+		//checks if the radius of the objects are overlapping
+		if(java.lang.Math.sqrt(( xPosition - rhs.xPosition) *(xPosition - rhs.xPosition) + (yPosition - rhs.yPosition) * (yPosition - rhs.yPosition)) <= ShotRadius + rhs.getRadius())
+		{
+				return true;
+				}
+				
+		return false;
+	}
+
 }
+

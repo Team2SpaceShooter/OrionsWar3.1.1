@@ -52,7 +52,7 @@ public class Main
     	System.out.println("creating GUI");
     	
     	mainFrame = new JFrame();
-    	mainFrame.setSize(new Dimension(1012,825));
+    	mainFrame.setSize(new Dimension(1000,800));
     	mainFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("images/spacebackgrouBIG.png"));
     	mainFrame.setResizable(false);
     	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,8 +74,14 @@ public class Main
     	Ship_Shop_Weapon_Confirmation = new Ship_Shop_Weapon_Confirmation();
     	Game_Screen = new Game_Screen();
     	Save_Confirmation_PopUp = new Save_Confirmation_PopUp();
+    	Player1 = new Player();
     	//TODO: this should only get called when the highscore menu is called specifically remembering to close file and whatnot
     	//((HighScoreMenu) highScoreMenu).loadScores();
+  
+    	
+    	
+    	
+    	
     	
     	mainFrame.setVisible(true);
     	

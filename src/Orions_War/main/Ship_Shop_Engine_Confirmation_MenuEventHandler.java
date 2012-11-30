@@ -22,18 +22,21 @@ public class Ship_Shop_Engine_Confirmation_MenuEventHandler
 				Main.Player1.Ship.Ship_Engine.update_purhcased_Engines(0);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Engine.Engine_Cost.get(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopEnginesMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Engine.update_purhcased_Engines(1);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Engine.Engine_Cost.get(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopEnginesMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Engine.update_purhcased_Engines(2);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Engine.Engine_Cost.get(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			
 			
@@ -67,16 +70,19 @@ public class Ship_Shop_Engine_Confirmation_MenuEventHandler
 			{
 				Main.Player1.Ship.Ship_Engine.update_equipped_engine(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopEnginesMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Engine.update_equipped_engine(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopEnginesMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Engine.update_equipped_engine(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 
 			Main.mainFrame.add(Main.ShipShopEnginesMenu);

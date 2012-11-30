@@ -276,9 +276,9 @@ public class ShipShopEnginesMenu extends JPanel
 
 	public void moveSelectionOvalUp()
 	{
-		if(selectionOvalY == 3 || selectionOvalY > 171 )
+		if(selectionOvalY == 3 || selectionOvalY > 147 )
 		{
-			selectionOvalY = 171;
+			selectionOvalY = 147;
 			selectionOvalX = 210;
 			selectionOvalWidth = 12;
 			selectionOvalHeight = 12;
@@ -292,7 +292,7 @@ public class ShipShopEnginesMenu extends JPanel
      	}
 	public void moveSelectionOvalDown()
 	{
-		if(selectionOvalY >= 171 && selectionOvalX > 210)
+		if(selectionOvalY >= 147 && selectionOvalX > 210)
 		{
 			selectionOvalY = 3;
 			selectionOvalX = 210;
@@ -301,7 +301,7 @@ public class ShipShopEnginesMenu extends JPanel
 			repaint();
 			return;
 		}
-		else if(selectionOvalY >= 171)
+		else if(selectionOvalY >= 147)
 		{
 			selectionOvalY = 3;
 			repaint();
@@ -315,7 +315,7 @@ public class ShipShopEnginesMenu extends JPanel
 	}
 	public void moveSelectionOvalRight()
 	{
-		if(selectionOvalX == 210 && selectionOvalY <= 171)
+		if(selectionOvalX == 210 && selectionOvalY <= 147)
 		{
 			selectionOvalX = 340;
 			selectionOvalY = 430;
@@ -340,7 +340,7 @@ public class ShipShopEnginesMenu extends JPanel
 	}
 	public void moveSelectionOvalLeft()
 	{
-		if(selectionOvalX == 210 && selectionOvalY <= 171)
+		if(selectionOvalX == 210 && selectionOvalY <= 147)
 		{
 			selectionOvalX = 740;
 			selectionOvalY = 430;
@@ -381,8 +381,6 @@ public class ShipShopEnginesMenu extends JPanel
 			return 6;
 		else if(selectionOvalY == 147) 
 			return 7;
-		else if(selectionOvalY == 171) 
-			return 8;
 		else if(selectionOvalX == 340)
 		{
 			if(Main.Player1.Ship.Ship_Engine.Engine_Cost.get(0) <= Main.Player1.credits || Main.Player1.Ship.Ship_Engine.check_purchased_engines(0) == 1)

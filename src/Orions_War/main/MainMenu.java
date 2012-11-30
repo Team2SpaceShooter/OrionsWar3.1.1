@@ -27,7 +27,7 @@ public class MainMenu extends JPanel
 	
 	private Image img2;
 	
-	public static SelectionOval selector = new SelectionOval(40,94,94,174,20);
+	public static SelectionOval selector = new SelectionOval(40,94,94,154,20);
 	
 	public MainMenu()
 	{
@@ -61,8 +61,7 @@ public class MainMenu extends JPanel
 		g.drawString(newGame, 50, 100);
 		g.drawString(loadGame, 50, 120);
 		g.drawString(highScores, 50, 140);
-		g.drawString(ShipShop,50,160);
-		g.drawString(exit, 50, 180);
+		g.drawString(exit, 50, 160);
     }
 
 	/* elseif(selectionOvalY == 174) return 5; added to compensate for adding in the view ship shop option
@@ -75,7 +74,6 @@ public class MainMenu extends JPanel
 		else if(selector.getY() == 114) return 2;
 		else if(selector.getY() == 134) return 3;
 		else if(selector.getY() == 154) return 4;
-		else if(selector.getY() == 174) return 5;
 		return 0;
 	}
 }

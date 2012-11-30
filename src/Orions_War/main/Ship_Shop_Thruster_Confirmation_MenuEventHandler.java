@@ -22,18 +22,21 @@ public class Ship_Shop_Thruster_Confirmation_MenuEventHandler
 				Main.Player1.Ship.Ship_Thrusters.update_purhcased_Thrusters(0);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Thrusters.Thruster_Cost.get(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopThrustersMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Thrusters.update_purhcased_Thrusters(1);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Thrusters.Thruster_Cost.get(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopThrustersMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Thrusters.update_purhcased_Thrusters(2);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Thrusters.Thruster_Cost.get(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			
 			
@@ -67,16 +70,19 @@ public class Ship_Shop_Thruster_Confirmation_MenuEventHandler
 			{
 				Main.Player1.Ship.Ship_Thrusters.update_equipped_Thruster(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopThrustersMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Thrusters.update_equipped_Thruster(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopThrustersMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Thrusters.update_equipped_Thruster(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 
 			Main.mainFrame.add(Main.ShipShopThrustersMenu);

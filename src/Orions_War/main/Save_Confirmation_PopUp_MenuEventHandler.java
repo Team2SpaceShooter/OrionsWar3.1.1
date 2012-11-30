@@ -1,11 +1,13 @@
 package Orions_War.main;
 
+import java.io.IOException;
+
 public class Save_Confirmation_PopUp_MenuEventHandler
 {
     public static int menu_choice;
 	
 	
-	public static void handleEvent(int eventId)
+	public static void handleEvent(int eventId) throws IOException
 	{
 		// Changes focus to Main Ship Shop Menu
 		if(eventId == 1)
@@ -14,7 +16,7 @@ public class Save_Confirmation_PopUp_MenuEventHandler
 			Main.Save_Confirmation_PopUp.setEnabled(false);
 			Main.Save_Confirmation_PopUp.setFocusable(false);
 			Main.mainFrame.remove(Main.Save_Confirmation_PopUp);
-			//Main.Player1.saveGame();
+			Main.Player1.saveGame();
 			if(menu_choice == 0)
 			{
 			Main.mainFrame.add(Main.ShipShopHullsMenu);

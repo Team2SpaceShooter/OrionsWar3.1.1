@@ -2,6 +2,7 @@ package Orions_War.main;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileNotFoundException;
 
 public class ShipShopThrustersKeyAdapter extends KeyAdapter
 {
@@ -39,7 +40,12 @@ public class ShipShopThrustersKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(ShipShopThrustersMenu.getSelection());
-			ShipShopThrustersMenuEventHandler.handleEvent(ShipShopThrustersMenu.getSelection());
+			try {
+				ShipShopThrustersMenuEventHandler.handleEvent(ShipShopThrustersMenu.getSelection());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
 		}
 	}

@@ -86,23 +86,10 @@ public class MenuEventHandler
 		}
 		else if(eventId == 4)
 		{
-			Main.mainMenu.setVisible(false);
-			Main.mainMenu.setFocusable(false);
-			Main.mainMenu.setEnabled(false);
-			
-			Main.mainFrame.remove(Main.mainMenu);
-			Main.mainFrame.add(Main.ShipShopMenu);
-			
-			Main.ShipShopMenu.setFocusable(true);
-			Main.ShipShopMenu.setVisible(true);
-			Main.ShipShopMenu.setEnabled(true);
-			Main.ShipShopMenu.requestFocusInWindow();
-		
-		}
-		else if(eventId == 5)
-		{
+
 			Main.mainFrame.dispose();
 		}
+		
 		
 		
 		

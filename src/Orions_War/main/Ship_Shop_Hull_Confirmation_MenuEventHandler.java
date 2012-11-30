@@ -22,18 +22,21 @@ public class Ship_Shop_Hull_Confirmation_MenuEventHandler
 				Main.Player1.Ship.Ship_Hull.update_purhcased_Hulls(0);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Hull.Hull_Cost.get(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopHullsMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Hull.update_purhcased_Hulls(1);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Hull.Hull_Cost.get(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopHullsMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Hull.update_purhcased_Hulls(2);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Hull.Hull_Cost.get(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			
 			
@@ -67,16 +70,19 @@ public class Ship_Shop_Hull_Confirmation_MenuEventHandler
 			{
 				Main.Player1.Ship.Ship_Hull.update_equipped_Hull(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopHullsMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Hull.update_equipped_Hull(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopHullsMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Hull.update_equipped_Hull(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 
 			Main.mainFrame.add(Main.ShipShopHullsMenu);

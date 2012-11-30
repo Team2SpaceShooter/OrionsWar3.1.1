@@ -1,5 +1,8 @@
 package Orions_War.main;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 
 
 public class NewGameMenuEventHandler 
@@ -10,7 +13,7 @@ public class NewGameMenuEventHandler
 	// event 3: options
 	// event 4: exit application
 
-	public static void handleEvent(int eventId)
+	public static void handleEvent(int eventId) throws IOException
 	{
 		// return to main menu
 		if(eventId == 1)
@@ -41,21 +44,29 @@ public class NewGameMenuEventHandler
 			}
 			else if(!Main.newGameMenu.checkDuplicateSave(Main.newGameMenu.getNewName()))
 			{
-				System.out.println("going into how to play screen");
+				
 				Main.newGameMenu.setVisible(false);
 				Main.newGameMenu.setEnabled(false);
 				Main.newGameMenu.setFocusable(false);
 				
 				Main.mainFrame.remove(Main.newGameMenu);
-				Main.mainFrame.add(Main.HowToPlayScreen);
-				
 				Main.Player1.Update_Player_Name(Main.newGameMenu.getNewName());
 				Main.Player1.saveGame();
+
+				//Main.Player1.saveGame();
+				Main.mainFrame.add(Main.Game_Screen);
+				   
 				
-				Main.HowToPlayScreen.setVisible(true);
-				Main.HowToPlayScreen.setEnabled(true);
-				Main.HowToPlayScreen.setFocusable(true);
-				Main.HowToPlayScreen.requestFocusInWindow();
+				
+			 	Main.Game_Screen.setVisible(true);
+				Main.Game_Screen.setEnabled(true);
+				Main.Game_Screen.setFocusable(true);
+				
+			
+				Main.Game_Screen.requestFocusInWindow();
+				
+				Main.Game_Screen.play();
+				
 			}
 			
 			

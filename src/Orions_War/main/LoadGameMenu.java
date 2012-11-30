@@ -117,17 +117,9 @@ public class LoadGameMenu extends JPanel
 	
 	public void getSaves()
 	{
-		try 
-		{
-			saveManifest = new File(this.getClass().getResource("/Orions_War/saves/spacegame manifest.txt").toURI());
-		}
-		catch (URISyntaxException e) 
-		{
-			System.out.println("printing stack trace");
-			e.printStackTrace();
-		}
+		saveManifest = new File(System.getProperty("user.dir")+"/saves/List_Of_Saves.txt");
 		if(saveManifest == null) System.out.println("file null");
-		
+		System.out.println(saveManifest);
 		Scanner saveReader = null;
 		try
 		{
@@ -142,18 +134,12 @@ public class LoadGameMenu extends JPanel
 		//fileDisplay.setRows(numFilesToLoad);
 		for(int i = 0; i < numFilesToLoad; i++)
 		{
-			try 
-			{
+			if(saveReader.hasNext()) {
 				String tempString = saveReader.next();
 				//System.out.println(tempString);
 				fileNameArray.add(tempString);
 				//fileDisplay.append(tempString+"\n");
-				saveArray.add(new File(this.getClass().getResource("/Orions_War/saves/"+tempString+".txt").toURI()));
-			} 
-			catch (URISyntaxException e) 
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				saveArray.add(new File(System.getProperty("user.dir")+"/saves/"+tempString+".txt"));
 			}
 			
 			//fileNameArray.add(saveReader.next());

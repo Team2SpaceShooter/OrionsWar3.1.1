@@ -2,6 +2,7 @@ package Orions_War.main;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileNotFoundException;
 
 public class LoadGameMenuKeyAdapter extends KeyAdapter
 {
@@ -33,7 +34,12 @@ public class LoadGameMenuKeyAdapter extends KeyAdapter
 		case KeyEvent.VK_ENTER:
 			System.out.println("enter");
 			System.out.println(loadGameMenu.getSelection());
-			LoadGameMenuEventHandler.handleEvent(loadGameMenu.getSelection());
+			try {
+				LoadGameMenuEventHandler.handleEvent(loadGameMenu.getSelection());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
 		}
 	}

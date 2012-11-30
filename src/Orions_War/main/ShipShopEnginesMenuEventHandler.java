@@ -1,5 +1,7 @@
 package Orions_War.main;
 
+import java.io.FileNotFoundException;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -8,7 +10,7 @@ import javax.swing.JPanel;
 public class ShipShopEnginesMenuEventHandler
 {
     
-	public static void handleEvent(int eventId)
+	public static void handleEvent(int eventId) throws FileNotFoundException
 	{
 		// Changes focus to Main Ship Shop Menu
 		if(eventId == 1)
@@ -106,12 +108,19 @@ public class ShipShopEnginesMenuEventHandler
 			
 			Main.mainFrame.remove(Main.ShipShopEnginesMenu);
 			
-			Main.mainFrame.add(Main.Game_Screen);
+            Main.mainFrame.add(Main.Game_Screen);
 		   
-			Main.Game_Screen.setVisible(true);
+			
+			
+		 	Main.Game_Screen.setVisible(true);
 			Main.Game_Screen.setEnabled(true);
 			Main.Game_Screen.setFocusable(true);
+			
+		
 			Main.Game_Screen.requestFocusInWindow();
+			
+			Main.Game_Screen.play();
+			
 		}
 		else if(eventId == 8)
 		{

@@ -22,18 +22,21 @@ public class Ship_Shop_Weapon_Confirmation_MenuEventHandler
 				Main.Player1.Ship.Ship_Weapon.update_purhcased_Weapons(0);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Weapon.Weapon_Cost.get(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopWeaponsMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Weapon.update_purhcased_Weapons(1);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Weapon.Weapon_Cost.get(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopWeaponsMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Weapon.update_purhcased_Weapons(2);
 				Main.Player1.credits -= Main.Player1.Ship.Ship_Weapon.Weapon_Cost.get(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			
 			
@@ -67,16 +70,19 @@ public class Ship_Shop_Weapon_Confirmation_MenuEventHandler
 			{
 				Main.Player1.Ship.Ship_Weapon.update_equipped_Weapon(0);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopWeaponsMenu.selectionOvalX == 540)
 			{
 				Main.Player1.Ship.Ship_Weapon.update_equipped_Weapon(1);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 			else if(Main.ShipShopWeaponsMenu.selectionOvalX == 740)
 			{
 				Main.Player1.Ship.Ship_Weapon.update_equipped_Weapon(2);
 				Main.Player1.Ship.update_parts();
+				Main.Player1.set_current_ship_image();
 			}
 
 			Main.mainFrame.add(Main.ShipShopWeaponsMenu);

@@ -1,11 +1,13 @@
 package Orions_War.main;
 
+import java.io.FileNotFoundException;
+
 
 
 public class ShipShopThrustersMenuEventHandler
 {
 
-	public static void handleEvent(int eventId)
+	public static void handleEvent(int eventId) throws FileNotFoundException
 	{
 		// Do nothing because same screen is being selected
 		if(eventId == 1)
@@ -109,6 +111,7 @@ public class ShipShopThrustersMenuEventHandler
 			Main.Game_Screen.setEnabled(true);
 			Main.Game_Screen.setFocusable(true);
 			Main.Game_Screen.requestFocusInWindow();
+			Main.Game_Screen.play();
 		}
 		else if(eventId == 8)
 		{

@@ -7,9 +7,9 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class GameLoop extends JPanel implements Runnable
+public class GameLoop extends JPanel
 {
-
+	/*
 	private static Color backGroundColor = Color.black;
 	private static Color textColor = Color.white;
 	
@@ -17,10 +17,13 @@ public class GameLoop extends JPanel implements Runnable
 	
 	private static Thread thread;
 	private static int sleepTime = 20; // 20 milliseconds sleep time
+	*/
 	
 	public GameLoop()
 	{
-		System.out.println("created game loop");
+		/*
+		 * System.out.println("created game loop");
+		 
 		
 		this.setBackground(backGroundColor);
 		this.setVisible(true);
@@ -69,5 +72,9 @@ public class GameLoop extends JPanel implements Runnable
 		// TODO Auto-generated method stub
 		
 	}
-	
+	*/
+		
+		
+		//This Code is currently not in use!!!
+}
 }

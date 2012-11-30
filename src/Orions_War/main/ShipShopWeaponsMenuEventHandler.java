@@ -1,11 +1,13 @@
 package Orions_War.main;
 
+import java.io.FileNotFoundException;
+
 
 
 public class ShipShopWeaponsMenuEventHandler
 {
 
-	public static void handleEvent(int eventId)
+	public static void handleEvent(int eventId) throws FileNotFoundException
 	{
 		// Changes focus to Main Ship Shop Menu
 		if(eventId == 1)
@@ -109,6 +111,7 @@ public class ShipShopWeaponsMenuEventHandler
 			Main.Game_Screen.setEnabled(true);
 			Main.Game_Screen.setFocusable(true);
 			Main.Game_Screen.requestFocusInWindow();
+			Main.Game_Screen.play();
 		}
 		else if(eventId == 8)
 		{

@@ -4,7 +4,7 @@ public class Space_Objects
 {
    static int playfieldHeight;
    static int playfieldWidth;
-   double xPosition, yPosition, xVelocity, yVelocity, radius;
+   public double xPosition, yPosition, xVelocity, yVelocity, radius;
    
    Space_Objects(double xPos, double yPos, double xVel, double yVel, double radius)
    {
@@ -32,7 +32,8 @@ public class Space_Objects
 	
 	public void move()
 	{
-		yPosition = yPosition - yVelocity;
+		xPosition += xVelocity;
+		yPosition += yVelocity;
 	}
 
 }

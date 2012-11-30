@@ -1,0 +1,1 @@
+Ships spawn with different images, shots have been appearing but not properly. The decision to go ahead with only one image for the shots has been made to give the user more of a challenge when considering whether or not they can take another hit.

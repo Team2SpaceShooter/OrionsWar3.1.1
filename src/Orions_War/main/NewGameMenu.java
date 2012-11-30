@@ -103,15 +103,7 @@ public class NewGameMenu extends JPanel
 	{
 		File saveManifest = null;
 		
-		try 
-		{
-			saveManifest = new File(this.getClass().getResource("/Orions_War/saves/spacegame manifest.txt").toURI());
-		}
-		catch (URISyntaxException e) 
-		{
-			System.out.println("printing stack trace");
-			e.printStackTrace();
-		}
+		saveManifest = new File(System.getProperty("user.dir") +"/saves/List_Of_Saves.txt");
 		if(saveManifest == null) System.out.println("file null");
 		
 		Scanner manifestReader = null;
@@ -125,7 +117,7 @@ public class NewGameMenu extends JPanel
 		}
 		
 		int numEntries = manifestReader.nextInt();
-		
+		if(manifestReader.hasNext())
 		for(int i = 0; i < numEntries; i++)
 		{
 			
